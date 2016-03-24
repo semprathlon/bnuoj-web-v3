@@ -5,11 +5,11 @@ include_once("functions/users.php");
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="BNU Online Judge, A simple, full-featured Online Judge." />
-    <meta name="keywords" content="Online Judge, BNU, OJ, BNUOJ, BOJ, Virtual Judge, Replay Contest, Problem Category" />
-    <meta name="author" content="51isoft">
+    <meta name="description" content="JNU Online Judge, A simple, full-featured Online Judge." />
+    <meta name="keywords" content="Online Judge, JNU, OJ, Virtual Judge, Replay Contest, Problem Category" />
+    <meta name="author" content="semprathlon">
     <link rel="shortcut icon" href="ico/bnuoj.ico" />
-    <title><?= $pagetitle==""?"BNU Online Judge":$pagetitle ?></title>
+    <title><?= $pagetitle==""?"JNU Online Judge":$pagetitle ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le styles -->
@@ -46,7 +46,7 @@ include_once("functions/users.php");
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="index.php">BNUOJ</a>
+          <a class="brand" href="index.php">JNUOJ</a>
           <div class="nav-collapse collapse">
             <ul class="nav" id="nav">
               <li class="dropdown" id="problem"><a class="dropdown-toggle" data-toggle="dropdown" href="problem.php">Problem <b class="caret"></b></a>
@@ -71,8 +71,8 @@ include_once("functions/users.php");
               <li class="dropdown" id="more"><a class="dropdown-toggle" data-toggle="dropdown" href="teaminfo.php">More... <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="news.php">News</a></li>
-                  <li><a href="teaminfo.php">Our Team</a></li>
-                  <li><a href="http://www.oiegg.com/forumdisplay.php?fid=407" target="_blank">BBS</a></li>
+                  <li><a href="">Our Team</a></li>
+                  <li><a href="" target="_blank">BBS</a></li>
                   <li class="divider"></li>
                   <li><a href="recent_contest.php">Recent Contests</a></li>
                   <!--<li><a href="training_stat.php">Training Stats</a></li>-->
