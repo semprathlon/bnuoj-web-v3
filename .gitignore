@@ -7,3 +7,4 @@
 
 # ignore real config files
 config.php
+/nbproject/
