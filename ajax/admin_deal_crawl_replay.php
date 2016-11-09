@@ -19,7 +19,7 @@ if ($current_user->is_root()) {
     else if ($oj=="CFGYM") $ret=replay_crawl_cfgym($cid);
     
     if ($ret["code"]==1) {
-        if ($ret["msg"]=="") $ret["msg"]="Error occured!";
+        if ($ret["msg"]=="") $ret["msg"]="Error occured!".json_encode($ret);
     }
     else $ret["msg"]="Success!";
 }

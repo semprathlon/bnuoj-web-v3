@@ -140,7 +140,7 @@ class User {
     }
     function is_root() {
         if (!$this->valid) return false;
-        return $this->info["isroot"]=='1'?true:false;
+        return $this->info["isroot"]>='1'?true:false;
     }
     function is_codeviewer() {
         if (!$this->valid) return false;

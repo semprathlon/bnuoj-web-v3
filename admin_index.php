@@ -61,7 +61,7 @@ if ($current_user->is_root()) {
                       <label class="radio inline"><input type="radio" name="p_ignore_noc" value="0" checked="checked" /> No</label>
                     </td>
                   </tr>
-                  <tr><td>Memory Limit</td><td><input type="text" name="memory_limit" value="65536" class="input-small" /> KB</td></tr>
+                  <tr><td>Memory Limit</td><td><input type="text" name="memory_limit" value="32768" class="input-small" /> KB</td></tr>
                   <tr class="hide"><td>Number of Testcases</td><td><input type="text" name="noc" value="1" class="input-small" /></td></tr>
                   <tr>
                     <td>Special Judge</td>
