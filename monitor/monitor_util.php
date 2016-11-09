@@ -104,7 +104,7 @@ function monitor_hdu() {
     global $db, $timeoutopts;
     $i=1;
     while (true) {
-        $html=str_get_html(get_url("http://acm.hdu.edu.cn/listproblem.php?vol=$i", false, $timeoutopts));
+        $html=str_get_html(get_url("http://acm.split.hdu.edu.cn/listproblem.php?vol=$i", false, $timeoutopts));
         $table=$html->find("table",4);
         $txt=explode(";",$table->find("script",0)->innertext);
         if (sizeof($txt)<2) break;
