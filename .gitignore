@@ -7,4 +7,9 @@
 
 # ignore real config files
 config.php
-/nbproject/
+
+# ignore cached pictures
+/images/
+
+# ignore website icons
+/ico/
