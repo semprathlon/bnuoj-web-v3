@@ -213,9 +213,9 @@ if (!contest_started($cid)||!($current_user->is_root()||contest_get_val($cid,"is
               <th>Language: </th>
               <td style="text-align:left;">
                 <select name="language" id="lang" accesskey="l">
-                  <option value="1" <?= $lastlang==1?"selected='selected'":"" ?>>GNU C++</option>
-                  <option value="2" <?= $lastlang==2?"selected='selected'":"" ?>>GNU C</option>
-                  <option value="3" <?= $lastlang==3?"selected='selected'":"" ?>>Oracle Java</option>
+                  <option value="1" <?= $lastlang==1?"selected='selected'":"" ?>>C++</option>
+                  <option value="2" <?= $lastlang==2?"selected='selected'":"" ?>>C</option>
+                  <option value="3" <?= $lastlang==3?"selected='selected'":"" ?>>Java</option>
                   <option value="4">Free Pascal</option>
                   <option value="5">Python2</option>
                   <option value="16">Python3</option>

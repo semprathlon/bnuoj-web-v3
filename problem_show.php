@@ -4,7 +4,7 @@ $pid = intval(convert_str($_GET['pid']));
 if ($pid=="") $pid="0";
 $show_problem=new Problem;
 $show_problem->set_problem($pid);
-if ($show_problem->is_valid() && $show_problem->get_val("hide")==0) $pagetitle="BNUOJ ".$pid." - ".$show_problem->get_val("title");
+if ($show_problem->is_valid() && $show_problem->get_val("hide")==0) $pagetitle="JNUOJ ".$pid." - ".$show_problem->get_val("title");
 else $pagetitle="Problem Unavailable";
 $lastlang=$_COOKIE[$config["cookie_prefix"]."lastlang"];
 if ($lastlang==null) $lastlang=1;
@@ -266,9 +266,9 @@ if (!$show_problem->is_valid()||($show_problem->get_val("hide")==1&&!$current_us
               <th>Language: </th>
               <td style="text-align:left;">
                 <select name="language" id="lang" accesskey="l">
-                  <option value="1" <?= $lastlang==1?"selected='selected'":"" ?>>GNU C++</option>
-                  <option value="2" <?= $lastlang==2?"selected='selected'":"" ?>>GNU C</option>
-                  <option value="3" <?= $lastlang==3?"selected='selected'":"" ?>>Oracle Java</option>
+                  <option value="1" <?= $lastlang==1?"selected='selected'":"" ?>>C++</option>
+                  <option value="2" <?= $lastlang==2?"selected='selected'":"" ?>>C</option>
+                  <option value="3" <?= $lastlang==3?"selected='selected'":"" ?>>Java</option>
                   <option value="4">Free Pascal</option>
                   <option value="5">Python2</option>
                   <option value="16">Python3</option>

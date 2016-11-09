@@ -94,7 +94,7 @@ $(document).ready(function() {
     $("#cprobs").problemlist();
     $("#vprobs").problemlist();
 
-    $("option[value=BNU]","select[name=pcoj]").remove();
+    $("option[value=JNU]","select[name=pcoj]").remove();
 
     $("#notiform").bind("correct",function() {
         $("input:submit,button:submit,.btn",this).removeAttr("disabled").removeClass("disabled");

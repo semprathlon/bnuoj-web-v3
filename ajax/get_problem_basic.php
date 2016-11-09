@@ -3,7 +3,7 @@ include_once(dirname(__FILE__)."/../functions/problems.php");
 $vname=convert_str($_GET['vname']);
 $vid=convert_str($_GET['vid']);
 $ret["code"]=1;
-if ($vname=="BNU") {
+if ($vname=="JNU") {
     $ret["pid"]=$vid;
     $ret["title"]=problem_get_title($ret["pid"]);
     if ($ret["title"]) $ret["code"]=0;

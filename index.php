@@ -4,7 +4,7 @@ include_once("functions/sidebars.php");
 include_once("functions/contests.php");
 ?>
         <div class="hero-unit">
-          <h1>Welcome to JNUOJ 0.1!</h1>
+          <h1>Welcome to JNUOJ 0.2!</h1>
           <p>
             IE 7+, Opera 11+, Safari 5+, Firefox 5+ and Chrome 14+ are <span class="badge badge-important"><b>REQUIRED</b></span> according to <a href="https://github.com/twitter/bootstrap/wiki/Browser-Compatibility" target='_blank'>Bootstrap compatibility page</a>.<br />
             Enjoy and have fun!
