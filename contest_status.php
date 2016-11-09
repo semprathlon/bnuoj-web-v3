@@ -49,9 +49,9 @@ if (contest_get_val($cid,"has_cha")) {
               <label>Language:
                 <select name="showlang" id="showlang" class="input-medium">
                   <option value="">All</option>
-                  <option value="1">GNU C++</option>
-                  <option value="2">GNU C</option>
-                  <option value="3">Oracle Java</option>
+                  <option value="1">C++</option>
+                  <option value="2">C</option>
+                  <option value="3">Java</option>
                   <option value="4">Free Pascal</option>
                   <option value="5">Python2</option>
                   <option value="16">Python3</option>

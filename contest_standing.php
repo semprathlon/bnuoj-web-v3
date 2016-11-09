@@ -511,9 +511,9 @@ if (contest_exist($cid))
             <b>Data Type: </b><input type='radio' name='chadata_type' value='0' checked="checked" style="width:20px"> Raw Data &nbsp;&nbsp;&nbsp;&nbsp; <input type='radio' name='chadata_type' value='1' style="width:20px"> Souce Code <br />
             <div id="cha_lang_select" style="display:none">
               <b>Language: </b><select name="chadata_lang">
-                <option value="1" selected='selected' >GNU C++</option>
-                <option value="2">GNU C</option>
-                <option value="3">Oracle Java</option>
+                <option value="1" selected='selected' >C++</option>
+                <option value="2">C</option>
+                <option value="3">Java</option>
                 <option value="4">Free Pascal</option>
                 <option value="5">Python2</option>
                 <option value="16">Python3</option>
