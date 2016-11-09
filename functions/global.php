@@ -69,13 +69,13 @@ function match_shjs($lang) {
 function match_lang($lang) {
     switch ($lang) {
         case "1":
-            $lang="GNU C++";
+            $lang="C++";
             break;
         case "2":
-            $lang="GNU C";
+            $lang="C";
             break;
         case "3":
-            $lang="Oracle Java";
+            $lang="Java";
             break;
         case "4":
             $lang="Free Pascal";
@@ -128,7 +128,7 @@ function get_ip() {
 
 function get_all_vnames() {
     global $db;
-    $sql="select name from ojinfo where name not like 'BNU'";
+    $sql="select name from ojinfo where name not like 'JNU'";
     $result=array();
     foreach ((array)$db->get_results($sql,ARRAY_N) as $value) $result[]=$value[0];
     return $result;

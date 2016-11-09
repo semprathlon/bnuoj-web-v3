@@ -88,8 +88,8 @@ if (sizeof($scheduled_vcontest)>0) {
 
           <h2>Greetings!</h2>
           <div class="well">
-            Welcome to BNU Online Judge 2.0! <br />
-            If you don't like it, <a href='../contest' target='_blank'>click here</a> for the original BNUOJ. <br />
+            Welcome to JNU Online Judge 2.0! <br />
+            If you don't like it, <a href='../contest' target='_blank'>click here</a> for the original JNUOJ. <br />
             IE 9+, Opera 9.5+, Safari 4.0+, Firefox 8+ and Chrome 12+ are <span style='color:red;font-weight:bold'>STRONGLY RECOMMENDED!</span> <br />
             I wish all bugs are gone....<br />
             Bug report or feature requests: <a href='mailto:yichao#mail.bnu.edu.cn'>click here</a>.<br />

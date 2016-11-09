@@ -5,7 +5,7 @@ include_once(dirname(__FILE__)."/../functions/users.php");
 $ret=array();
 $ret["code"]=1;
 $cid = convert_str($_POST['cid']);
-if ($current_user->is_root()&&contest_get_val($cid,"type")!=99) {
+if ($current_user->is_root()/*&&contest_get_val($cid,"type")!=99*/) {
     $title = htmlspecialchars(convert_str($_POST['title']));
     /*$sql_cn = "select max(cid) from contest";
     $que_cn = mysql_query($sql_cn);
