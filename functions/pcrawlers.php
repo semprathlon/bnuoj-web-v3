@@ -309,7 +309,7 @@ function pcrawler_fzu_num() {
 }
 
 function pcrawler_hdu($pid) {
-    $url="http://acm.split.hdu.edu.cn/showproblem.php?pid=$pid";
+    $url="http://acm.hdu.edu.cn/showproblem.php?pid=$pid";
     $content=get_url($url);
     $content=iconv("gbk","UTF-8//IGNORE",$content);
     $ret=array();
@@ -329,7 +329,7 @@ function pcrawler_hdu($pid) {
         if (strpos($content,"<font color=red>Special Judge</font>")!==false) $ret["special_judge_status"]=1;
         else $ret["special_judge_status"]=0;
 
-        $ret=pcrawler_process_info($ret,"hdu","http://acm.split.hdu.edu.cn/");
+        $ret=pcrawler_process_info($ret,"hdu","http://acm.hdu.edu.cn/");
         $id=pcrawler_insert_problem($ret,"HDU",$pid);
         return "HDU $pid has been crawled as $id.<br>";
     }
@@ -340,7 +340,7 @@ function pcrawler_hdu_num() {
     global $db;
     $i=1;
     while (true) {
-        $html=str_get_html(get_url("http://acm.split.hdu.edu.cn/listproblem.php?vol=$i"));
+        $html=str_get_html(get_url("http://acm.hdu.edu.cn/listproblem.php?vol=$i"));
         $table=$html->find("table",4);
         $txt=explode(";",$table->find("script",0)->innertext);
         if (sizeof($txt)<2) break;
