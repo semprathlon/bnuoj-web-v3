@@ -11,8 +11,11 @@ $(document).ready(function() {
     })
 
 
-    if ($.cookie(cookie_prefix+"defaultshare")=="0") $("input[name='isshare']:nth(1)").attr("checked",true);
-    else $("input[name='isshare']:nth(0)").attr("checked",true);
+    //if ($.cookie(cookie_prefix+"defaultshare")=="0") $("input[name='isshare']:nth(1)").attr("checked",true);
+    //else $("input[name='isshare']:nth(0)").attr("checked",true);
+
+    if ($.cookie(cookie_prefix+"defaultshare")=="1") $("input[name='isshare']:nth(0)").attr("checked",true);
+    else $("input[name='isshare']:nth(1)").attr("checked",true);
 
     var oris=100;
 
