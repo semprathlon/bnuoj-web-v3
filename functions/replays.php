@@ -953,17 +953,24 @@ function replay_hustv_convert($oj) {
 function replay_crawl_hustv($cid) {
     $res=array();
     $tuCurl=curl_init();
-    curl_setopt($tuCurl,CURLOPT_URL,"http://acm.hust.edu.cn/vjudge/contest/view.action?cid=$cid");
+    curl_setopt($tuCurl,CURLOPT_URL,"http://acm.hust.edu.cn/vjudge/contest/$cid");
     curl_setopt($tuCurl,CURLOPT_RETURNTRANSFER,1);
     curl_setopt($tuCurl,CURLOPT_FOLLOWLOCATION,1);
     curl_setopt($tuCurl,CURLOPT_USERAGENT,"BNUOJ");
+curl_setopt($tuCurl,CURLOPT_CONNECTTIMEOUT,10000);
+    curl_setopt($tuCurl,CURLOPT_TIMEOUT,10000); 
+    try{ 
     $html=curl_exec($tuCurl);
     curl_close($tuCurl);
-    $html=str_get_html($html);
+    $html=str_get_html($html);}
+    finally{
     if ($html->find("#viewContest")==null) {
         $res["code"]=1;
+	$res["res"]="uncomplete";
+	//$res["html"]=$html."";
         return $res;
     }
+    };
     $titles=$html->find("#viewContest td.center a");
     $res["pnum"]=sizeof($titles);
     for ($i=0;$i<sizeof($titles);$i++) {
@@ -973,7 +980,7 @@ function replay_crawl_hustv($cid) {
         $id=trim(strstr($titles[$i]->plaintext," "));
         $tname=problem_get_id_from_virtual($oj,$id);
         if ($tname==null) {
-            $res["code"]=1;
+            $res["code"]=2;
             return $res;
         }
         $res["prob"][]=$tname;
@@ -981,7 +988,7 @@ function replay_crawl_hustv($cid) {
     $sttime=date("Y-m-d H:i:s",$html->find("#overview tr",1)->find("td",1)->plaintext/1000);
     $edtime=date("Y-m-d H:i:s",$html->find("#overview tr",2)->find("td",1)->plaintext/1000);
     if ($html->find("#contest_title img")!=null) {
-        $res["code"]=1;
+        $res["code"]=3;
         return $res;
     }
     $title=trim($html->find("#contest_title",0)->plaintext);
@@ -998,7 +1005,7 @@ function replay_crawl_hustv($cid) {
     if ($db->num_rows) {
         $rcid=$row[0][0];
         $res["msg"]="Contest $cid already exists! CID: <a href='contest_show.php?cid=$rcid' target='_blank'>$rcid</a>";
-        $res["code"]=1;
+        $res["code"]=4;
     }
 
     return $res;
