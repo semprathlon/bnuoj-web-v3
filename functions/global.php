@@ -6,7 +6,7 @@ require_once(dirname(__FILE__)."/../vendor/autoload.php");
 
 if ($config["use_latex_render"]) include_once(dirname(__FILE__)."/latexrender/latex.php");
 
-if (!function_exists("latex_content")) {
+if (!function_exists(latex_content)) {
     function latex_content($a) { return $a; }
 }
 
@@ -121,10 +121,7 @@ function match_lang($lang) {
 }
 
 function get_ip() {
-    $ip = "";
-    if (isset($_SERVER["HTTP_X_FORWARDED_FOR"])) {
-        $ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
-    }
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
     if($ip=="") $ip = $_SERVER['REMOTE_ADDR'];
     return convert_str(htmlspecialchars($ip));
 }
@@ -217,11 +214,4 @@ function get_url($url) {
     return $content;
 }
 
-function isset_and_equal($array, $needle, $expect) {
-    return isset($array[$needle]) && $array[$needle] == $expect;
-}
-
-function fetch_default($array, $needle, $default) {
-    return isset($array[$needle]) && $array[$needle] != NULL ? $array[$needle] : $default;
-}
 ?>

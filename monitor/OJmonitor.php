@@ -30,7 +30,7 @@ function check_pku() {
 
 function check_hdu() {
     global $maxwaitnum, $timeoutopts;
-    $html=file_get_html("http://acm.hdu.edu.cn/status.php", false, $timeoutopts);
+    $html=file_get_html("http://acm.split.hdu.edu.cn/status.php", false, $timeoutopts);
     if ($html==null||$html->find("table.table_text",0)==null) return "Down: cannot connect.";
     else {
         $num=0;

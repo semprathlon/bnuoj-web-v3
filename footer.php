@@ -3,7 +3,7 @@
       <hr>
       <footer id="footer">
         <p>
-          Distributed under GPLv3. | <a href='https://github.com/51isoft/bnuoj' target="_blank">Project Homepage</a> | Developer: <a href="mailto:yichaonet#gmail.com">51isoft</a> | Current Style: <b id="stylename"></b>.
+          Distributed under GPLv3. | <a href='https://github.com/51isoft/bnuoj' target="_blank">Project Homepage</a> | Developer: <a href="mailto:yichaonet#gmail.com">51isoft</a> <a href="mailto:crccw@moonux.org">crccw</a> | 二次开发： <a href="mailto:semprathlon@163.com">Semprathlon</a> | Current Style: <b id="stylename"></b>.
         </p>
         <form class="form-inline">
           <label class="select">
@@ -26,7 +26,7 @@
               <option value="geo">Geo</option>
             </select>
           </label>
-          <label class="checkbox"> <input type="checkbox" id="selwidth" <?= isset($_COOKIE[$config["cookie_prefix"]."fluid_width"])&&$_COOKIE[$config["cookie_prefix"]."fluid_width"]==true?"checked":"" ?> />Fluid Width?</label>
+          <label class="checkbox"> <input type="checkbox" id="selwidth" <?= $_COOKIE[$config["cookie_prefix"]."fluid_width"]==true?"checked":"" ?> />Fluid Width?</label>
         </form>
       </footer>
     </div><!--/.fluid-container-->

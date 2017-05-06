@@ -6,7 +6,8 @@ $show_problem=new Problem;
 $show_problem->set_problem($pid);
 if ($show_problem->is_valid() && $show_problem->get_val("hide")==0) $pagetitle="JNUOJ ".$pid." - ".$show_problem->get_val("title");
 else $pagetitle="Problem Unavailable";
-$lastlang=fetch_default($_COOKIE, $config["cookie_prefix"]."lastlang", 1);
+$lastlang=$_COOKIE[$config["cookie_prefix"]."lastlang"];
+if ($lastlang==null) $lastlang=1;
 include_once("header.php");
 ?>
 <?php
@@ -277,8 +278,8 @@ if (!$show_problem->is_valid()||($show_problem->get_val("hide")==1&&!$current_us
                   <option value="9">Ruby</option>
                   <option value="10">Ada</option>
                   <option value="11">SML</option>
-                  <option value="12">Visual C++</option>
-                  <option value="13">Visual C</option>
+                  <option value="12">Visual C</option>
+                  <option value="13">Visual C++</option>
                   <option value="14">CLang</option>
                   <option value="15">CLang++</option>
                 </select>

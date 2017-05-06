@@ -1,8 +1,7 @@
 <?php
 //database informations
-$config["database"]["type"]                     =   "mysqli";
+$config["database"]["type"]                     =   "mysql";
 $config["database"]["host"]                     =   "127.0.0.1";
-$config["database"]["port"]                     =   3306;
 $config["database"]["username"]                 =   "bnuojuser";
 $config["database"]["password"]                 =   "bnuojpassword";
 $config["database"]["table"]                    =   "bnuoj";

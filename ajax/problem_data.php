@@ -1,5 +1,4 @@
 <?php
-include_once(dirname(__FILE__)."/../functions/global.php");
 include_once(dirname(__FILE__)."/../functions/users.php");
 
 $aColumns = array( 'total_ce', 'pid', 'title', 'source', 'total_ac', 'total_submit','vacnum', 'vtotalnum','vacpnum', 'vtotalpnum', 'vname', 'vid', 'author' );
@@ -10,8 +9,8 @@ $sTable = "problem";
 $sLimit = "";
 if ( isset( $_GET['iDisplayStart'] ) && $_GET['iDisplayLength'] != '-1' )
 {
-    $sLimit = "LIMIT ".intval( $_GET['iDisplayStart'] ).", ".
-        intval( $_GET['iDisplayLength'] );
+    $sLimit = "LIMIT ".convert_str( $_GET['iDisplayStart'] ).", ".
+        convert_str( $_GET['iDisplayLength'] );
 }
 
 //ordering
@@ -24,10 +23,10 @@ if ( isset( $_GET['iSortCol_0'] ) )
         if ( $_GET[ 'bSortable_'.intval($_GET['iSortCol_'.$i]) ] == "true" )
         {
             $sOrder .= $aColumns[ intval( $_GET['iSortCol_'.$i] ) ]."
-                ".( $_GET['sSortDir_'.$i] == "asc" ? "asc" : "desc") .", ";
+                ".convert_str( $_GET['sSortDir_'.$i] ) .", ";
         }
     }
-
+    
     $sOrder = substr_replace( $sOrder, "", -2 );
     if ( $sOrder == "ORDER BY" )
     {
@@ -59,8 +58,7 @@ if ( $_GET['sSearch'] != "" )
 /* Individual column filtering */
 for ( $i=0 ; $i<count($aColumns) ; $i++ )
 {
-    if ( isset_and_equal($_GET, 'bSearchable_'.$i, "true") &&
-        !isset_and_equal($_GET, 'sSearch_'.$i, ''))
+    if ( $_GET['bSearchable_'.$i] == "true" && $_GET['sSearch_'.$i] != '' )
     {
         if ( $sWhere == "" )
         {
@@ -90,6 +88,7 @@ $sQuery = "
 ";
 $aResultTotal = $db->get_row($sQuery,ARRAY_N);
 $iTotal = $aResultTotal[0];
+if ($EZSQL_ERROR) die("SQL Error!");
 
 /*
  * SQL queries
